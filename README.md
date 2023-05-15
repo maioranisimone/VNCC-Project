@@ -1,7 +1,5 @@
 # VNCC-Project
 
-# README.md
-
 This repository contains a Docker Compose configuration to set up a development environment for an application that manages a list of products of interest and tracks expenses. The configuration is defined in the `docker-compose.yml` file.
 
 ## Prerequisites
