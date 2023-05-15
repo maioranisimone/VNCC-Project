@@ -67,4 +67,63 @@ The services are connected to a common network named `my_network`, which uses th
 - The `depends_on` configuration specifies the service dependencies. The `db_api` service depends on the `db` service, and the `website` service depends on both the `db` and `db_api` services.
 - The health check feature is enabled for the `db` service. The health check command `pg_isready -U simone` checks if the PostgreSQL database is ready to accept connections. The health check runs every 5 seconds (`interval: 5s`), with a timeout of 5 seconds (`timeout: 5s`), and allows 5 retries (`retries: 5`).
 
-Feel free to
+
+## Deploying to Kubernetes
+
+To deploy the application to Kubernetes, you need to have Kubernetes installed on your system. If you haven't installed Kubernetes yet, follow these steps:
+
+1. Install Kubernetes by following the instructions at [kubernetes.io](https://kubernetes.io/docs/setup/).
+
+2. Once you have Kubernetes installed, you can proceed with the deployment process using the Kompose tool to convert the Docker Compose configuration into Kubernetes YAML files. Follow these steps:
+
+   1. Install Kompose by following the instructions at [www.kompose.io](https://www.kompose.io/).
+
+   2. After installing Kompose, navigate to the repository directory.
+
+   3. Run the following command to convert the Docker Compose configuration to Kubernetes YAML files:
+
+      ```
+      kompose convert
+      ```
+
+      This command will generate the necessary YAML files for deploying the application to Kubernetes.
+
+   4. Customize the generated YAML files if needed.
+
+
+By following these steps, you can deploy the application to Kubernetes and take advantage of its powerful orchestration capabilities.
+Once you have made the necessary modifications, you can deploy the application to Kubernetes using the following scripts.
+
+### Scripts for Running and Stopping the Project
+
+`run.sh` is a script that can be used to easily start the project. It handles the necessary steps to start the application and configure any required dependencies. To use the `run.sh` script, follow these steps:
+
+1. Make sure you have all the prerequisites installed, including Docker and Kubernetes.
+
+2. Open a terminal or command prompt.
+
+3. Navigate to the project directory.
+
+4. Run the following command:
+
+   ```
+   ./run.sh
+   ```
+
+   This command will execute the script and start the project.
+
+- `stop.sh` is a script that can be used to stop the running project. It gracefully shuts down the application and cleans up any resources. To use the `stop.sh` script, follow these steps:
+
+1. Open a terminal or command prompt.
+
+2. Navigate to the project directory.
+
+3. Run the following command:
+
+   ```
+   ./stop.sh
+   ```
+
+   This command will execute the script and stop the running project.
+
+Using these scripts can simplify the process of starting and stopping the project, allowing for easier management and development.
