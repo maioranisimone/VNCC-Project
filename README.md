@@ -1,6 +1,6 @@
 # VNCC-Project
 
-This repository contains a Docker Compose configuration to set up a development environment for an application that manages a list of products of interest and tracks expenses. The configuration is defined in the `docker-compose.yml` file.
+This repository contains a Docker Compose configuration to set up a development environment for an application that manages a list of products of interest and tracks expenses. The configuration is defined in the docker-compose.yml file, providing an easy way to run the application locally. Additionally, with the use of Kubernetes, you have the option to orchestrate and deploy the application to a Kubernetes cluster for more advanced deployment scenarios.
 
 ## Prerequisites
 
