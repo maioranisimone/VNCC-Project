@@ -4,10 +4,9 @@ This repository contains a Docker Compose configuration to set up a development 
 
 ## Prerequisites
 
-Before running the Docker Compose configuration, ensure that you have Docker and Docker Compose installed on your machine.
+Before running the Docker Compose configuration, ensure that you have Docker installed on your machine.
 
 - Docker: [Install Docker](https://docs.docker.com/get-docker/)
-- Docker Compose: [Install Docker Compose](https://docs.docker.com/compose/install/)
 
 ## Getting Started
 
