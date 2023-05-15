@@ -1,0 +1,50 @@
+<!-- Creazione di un pagina HTML per l'interazione con l'API del database PostgreSQL -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VNCC Project</title>
+    <link rel="shortcut icon" href="../static/favicon.ico">
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="../static/script.js"></script>
+</head>
+
+<body>
+    <h1>Inserisci i prodotti da acquistare</h1>
+    <div class="container">
+        <form action="http://localhost:5000/add_product" method="post" class="form" autocomplete="off">
+            <div>
+                <label for="product">Nome Prodotto</label>
+                <input type="text" name="product" id="product-input" maxlength="100" required>
+            </div>
+            <div>
+                <label for="quantita">Quantità</label>
+                <input type="number" name="quantita" id="quantita-input" step="1" required>
+            </div>
+            <div>
+                <label for="prezzo">Prezzo (€/int)</label>
+                <input type="number" name="prezzo" id="prezzo-input" step="1" required>
+            </div>
+            <button type="button" onclick="insert_product(this)" class="form-button">Inserisci</button>
+        </form>
+        <img src="https://www.focus.it/images/2022/03/01/carrello-della-spesa_1020x680.jpg" alt="Carrello"
+            class="carrello">
+    </div>
+    <div class="buttons">
+        <button type="button" onclick="recupero_dati()" class="bottone">Get List</button>
+        <button type="button" onclick="reset_list()" class="bottone">Reset List</button>
+        <div class="list">
+            <ul></ul>
+        </div>
+    </div>
+    <div class="summary">
+        <ul></ul>
+    </div>
+    <div class="total-cost"></div>
+    <div class="live-info"></div>
+</body>
+
+</html>
