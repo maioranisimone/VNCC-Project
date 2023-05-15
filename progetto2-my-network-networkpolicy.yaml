@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  creationTimestamp: null
+  name: progetto2-my-network
+spec:
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              io.kompose.network/progetto2-my-network: "true"
+  podSelector:
+    matchLabels:
+      io.kompose.network/progetto2-my-network: "true"

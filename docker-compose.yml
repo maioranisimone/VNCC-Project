@@ -1,0 +1,52 @@
+version: "3.8"
+
+volumes:
+  my_volume:
+
+
+services:
+
+  db:
+    build:
+      context: ./database
+    restart: always
+    environment:
+      - POSTGRES_USER=simone
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DATABASE=db
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U simone" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - my_volume:/var/lib/postgresql/data
+    networks:
+      - my_network
+
+  db_api:
+    build:
+      context: ./db-api
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+    networks:
+      - my_network
+
+  website:
+    build:
+      context: ./website
+    ports:
+      - 5001:5001
+    depends_on:
+      - db
+      - db_api
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
