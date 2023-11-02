@@ -15,7 +15,7 @@ To start the development environment, follow these steps:
 1. Clone this repository to your local machine:
 
    ```
-   git clone https://github.com/your-username/repository.git
+   git clone https://github.com/maioranisimone/VNCC-Project.git
    ```
 
 2. Navigate to the cloned repository:
